@@ -1,0 +1,84 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model FarmRentalForm {
+  caste                                EnumFarmRentalFormCaste
+  crop                                 String
+  currentAddress                       String
+  dateOfBirth                          DateTime
+  district                             String
+  firstNameOfFarmer                    String
+  firstNameOfFather                    String
+  firstNameOfMother                    String
+  fromDate                             DateTime
+  gender                               EnumFarmRentalFormGender
+  id                                   String                          @id @default(cuid())
+  landmark                             String?
+  lastNameOfFarmer                     String
+  lastNameOfFather                     String
+  lastNameOfMother                     String
+  maritalStatus                        EnumFarmRentalFormMaritalStatus
+  mobileNumber                         Int
+  mobileNumberSameAsWhatsappNumber     Boolean
+  permanentAddressSameAsCurrentAddress Boolean
+  pinCode                              Int
+  religion                             EnumFarmRentalFormReligion
+  state                                String
+  tehsil                               String
+  title                                EnumFarmRentalFormTitle
+  toDate                               DateTime
+  whatsappNumber                       Int?
+}
+
+enum EnumFarmRentalFormCaste {
+  Sc
+  St
+  Obc
+  Other
+  General
+}
+
+enum EnumFarmRentalFormGender {
+  Male
+  Female
+  Other
+}
+
+enum EnumFarmRentalFormMaritalStatus {
+  Married
+  Unmarried
+  Other
+}
+
+enum EnumFarmRentalFormReligion {
+  Hindu
+  Muslim
+  Sikh
+  Jain
+  Parsi
+  Khristian
+  Other
+}
+
+enum EnumFarmRentalFormTitle {
+  Mr
+  Mrs
+  Other
+}

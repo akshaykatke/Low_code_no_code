@@ -1,0 +1,30 @@
+import { SortOrder } from "../../util/SortOrder";
+
+export type FarmRentalFormOrderByInput = {
+  caste?: SortOrder;
+  crop?: SortOrder;
+  currentAddress?: SortOrder;
+  dateOfBirth?: SortOrder;
+  district?: SortOrder;
+  firstNameOfFarmer?: SortOrder;
+  firstNameOfFather?: SortOrder;
+  firstNameOfMother?: SortOrder;
+  fromDate?: SortOrder;
+  gender?: SortOrder;
+  id?: SortOrder;
+  landmark?: SortOrder;
+  lastNameOfFarmer?: SortOrder;
+  lastNameOfFather?: SortOrder;
+  lastNameOfMother?: SortOrder;
+  maritalStatus?: SortOrder;
+  mobileNumber?: SortOrder;
+  mobileNumberSameAsWhatsappNumber?: SortOrder;
+  permanentAddressSameAsCurrentAddress?: SortOrder;
+  pinCode?: SortOrder;
+  religion?: SortOrder;
+  state?: SortOrder;
+  tehsil?: SortOrder;
+  title?: SortOrder;
+  toDate?: SortOrder;
+  whatsappNumber?: SortOrder;
+};
